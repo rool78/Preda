@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DivideAndConquer {
+public class MergeSort {
 
     public static void main(String[] args) {
         System.out.println("#####Preda#####");
-        System.out.println("#########");
         printVector(mergeSort(new int[] {5,2,3,1}));
         printVector(mergeSort(new int[] {5,1,1,2,0,0}));
     }
@@ -49,7 +48,7 @@ public class DivideAndConquer {
         return merge(left, right);
     }
 
-    public static int[] merge(int[] left, int[] right) {
+    private static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length+right.length];
         int leftPointer = 0;
         int rightPointer = 0;
@@ -73,7 +72,7 @@ public class DivideAndConquer {
         return result;
     }
 
-    public static void printVector(int[] vector) {
+    private static void printVector(int[] vector) {
         for (int i : vector
         ) {
             System.out.println(i);
