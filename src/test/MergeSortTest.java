@@ -1,6 +1,6 @@
 package test;
 
-import com.company.MergeSort;
+import com.preda.MergeSort;
 import org.junit.Assert;
 import org.junit.Test;
 
