@@ -1,8 +1,8 @@
-package com.preda.ped1;
+package com.preda.ped1norecursion;
 
-import com.preda.ped1.model.Match;
-import com.preda.ped1.model.Player;
-import com.preda.ped1.model.Tournament;
+import com.preda.ped1norecursion.model.Match;
+import com.preda.ped1norecursion.model.Player;
+import com.preda.ped1norecursion.model.Tournament;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import java.util.List;
 public class Application {
 
     private Tournament tournament;
-    int numberOfPlayers;
-    int days;
+    private int numberOfPlayers;
+    private int days;
 
     public void launch(int n) {
         numberOfPlayers = n;

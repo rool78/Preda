@@ -1,4 +1,4 @@
-package com.preda.ped1.model;
+package com.preda.ped1norecursion.model;
 
 import java.util.List;
 
