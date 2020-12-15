@@ -14,10 +14,10 @@ public class Application {
     private int days;
 
     public void launch(int n) {
+        long startTime = System.nanoTime();
         numberOfPlayers = n;
         days = n - 1;
 
-        //TODO Creamos el torneo, si nos pasan el fichero con los nombres de los jugadores, les daremos nombre, si no, no.
         List<Player> players = new ArrayList<>();
 
         for (int i = 1; i <= numberOfPlayers; i++) {
@@ -26,6 +26,10 @@ public class Application {
         }
         tournament = new Tournament(days, players);
         arrangeTournament();
+        long stopTime = System.nanoTime();
+        //Quitar comentarios para ver tiempo ejecucion algoritmo
+        //System.out.print("No recursion time(ns): ");
+        //System.out.print(stopTime - startTime);
         printTable();
     }
 
@@ -54,7 +58,6 @@ public class Application {
                         int dayAvailable = findDay(player, opponent);
                         player.setMatch(new Match(opponent, dayAvailable));
                         opponent.setMatch(new Match(player, dayAvailable));
-                        System.out.println("Partido asignado: " + player.getName() + " vs " + opponent.getName() + " dia: " + dayAvailable);
                     }
                 }
             }

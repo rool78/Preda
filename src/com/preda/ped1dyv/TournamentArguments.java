@@ -14,7 +14,7 @@ public class TournamentArguments {
     private boolean recursiveFlag = false;
     private boolean namesFlag = false;
     private final List<String> names = new ArrayList<>();
-    private int maxPlayers;
+    private int players;
 
     public TournamentArguments(String[] args) {
         processArguments(args);
@@ -34,7 +34,7 @@ public class TournamentArguments {
                 return;
             }
             if (StringUtils.isNumeric(arg)) {
-                maxPlayers = Integer.parseInt(arg);
+                players = Integer.parseInt(arg);
             }
             if (arg.contains(".txt")) {
                 namesFlag = true;
@@ -64,7 +64,7 @@ public class TournamentArguments {
         return names;
     }
 
-    public int getMaxPlayers() {
-        return maxPlayers;
+    public int getPlayers() {
+        return players;
     }
 }

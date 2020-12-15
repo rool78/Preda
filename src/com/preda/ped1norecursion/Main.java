@@ -6,5 +6,6 @@ public class Main {
         int players = 4;
         Application application = new Application();
         application.launch(players);
+
     }
 }
