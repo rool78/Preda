@@ -1,7 +1,6 @@
 package com.preda.ped1dyv;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class DivideAndConquerB {
@@ -17,12 +16,11 @@ public class DivideAndConquerB {
         this.namesFlag = namesFlag;
         this.names = names;
         this.maxPlayers = maxPlayers;
-        this.table = new int[maxPlayers + 1][maxPlayers + 1];;
+        this.table = new int[maxPlayers + 2][maxPlayers + 2];
     }
 
     public void arrangeTournament() {
         arrangeTournamentB(maxPlayers, table);
-        System.out.println(Arrays.deepToString(table));
         printTournament();
     }
 
@@ -111,33 +109,34 @@ public class DivideAndConquerB {
     }
 
     private void printTournament() {
-        int days = maxPlayers - 1;
+        int days = maxPlayers % 2 == 0 ? maxPlayers - 1 : maxPlayers;
         int padding = findLongestName() + 3;
         if (namesFlag) {
             for (int i = 0; i < padding; i++) {
                 System.out.print(" ");
             }
             for (int i = 1; i <= days; i++) {
-                System.out.printf("%-"+ padding + "s", "d" + i + " ");
+                System.out.printf("%-" + padding + "s", "d" + i + " ");
             }
             System.out.println();
-            for (int i = 1; i < table.length; i++) {
-                System.out.printf("%-"+ padding + "s", names.get(i));
+            for (int i = 1; i < table.length - 1; i++) {
+                System.out.printf("%-" + padding + "s", names.get(i));
                 for (int j = 1; j <= days; j++) {
-                    System.out.printf("%-"+ padding + "s", names.get(table[i][j]));
+                    System.out.printf("%-" + padding + "s", names.get(table[i][j]));
                 }
                 System.out.println();
             }
         } else {
-            System.out.print("   ");
+            padding = 5;
+            System.out.print("     ");
             for (int i = 1; i <= days; i++) {
-                System.out.print("d" + i + " ");
+                System.out.printf("%-" + padding + "s", "d" + i + " ");
             }
             System.out.println();
-            for (int i = 1; i < table.length; i++) {
-                System.out.print("J" + i);
+            for (int i = 1; i < table.length - 1; i++) {
+                System.out.printf("%-" + padding + "s", "J" + i);
                 for (int j = 1; j <= days; j++) {
-                    System.out.print("  " + table[i][j]);
+                    System.out.printf("%-" + padding + "s", table[i][j]);
                 }
                 System.out.println();
             }
@@ -153,5 +152,4 @@ public class DivideAndConquerB {
         }
         return longest;
     }
-
 }
