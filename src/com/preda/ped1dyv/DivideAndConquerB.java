@@ -24,8 +24,8 @@ public class DivideAndConquerB {
         arrangeTournamentB(maxPlayers, table);
         long stopTime = System.nanoTime();
         //Quitar comentarios para ver tiempo ejecucion algoritmo
-        //System.out.print("Recursion time(ns): ");
-        //System.out.print(stopTime - startTime);
+//        System.out.print("Recursion time(ns): ");
+//        System.out.print(stopTime - startTime);
         printTournament();
     }
 
